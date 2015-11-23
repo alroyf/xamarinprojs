@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{F68453CD-2E67-4536-A83B-3BE6985BDB19}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>xamarinmaps.UITests</RootNamespace>
+    <AssemblyName>xamarinmaps.UITests</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>full</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="nunit.framework">
+      <HintPath>..\packages\NUnit.2.6.3\lib\nunit.framework.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.UITest">
+      <HintPath>..\packages\Xamarin.UITest.0.7.1\lib\Xamarin.UITest.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\iOS\xamarinmaps.iOS.csproj">
+      <Project>{F5DDFE15-CE75-4A19-899C-A04D99C810F5}</Project>
+      <Name>xamarinmaps.iOS</Name>
+      <ReferenceOutputAssembly>False</ReferenceOutputAssembly>
+      <Private>False</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\Droid\xamarinmaps.Droid.csproj">
+      <Project>{44B5FD41-A120-4A45-8337-73BE9E1A3A92}</Project>
+      <Name>xamarinmaps.Droid</Name>
+      <ReferenceOutputAssembly>False</ReferenceOutputAssembly>
+      <Private>False</Private>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Tests.cs" />
+    <Compile Include="AppInitializer.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+</Project>
